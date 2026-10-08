@@ -1,0 +1,10 @@
+2026-10-08 14:21:09 ERROR batch-worker app.py:6 TimeoutError: database connection timed out
+Traceback (most recent call last):
+  File "app.py", line 6, in process_batch
+    return connection.fetch_records(batch_id)
+TimeoutError: database connection timed out
+2026-10-08 14:22:17 ERROR retry-handler utils.py:7 ValueError: invalid literal for int() with base 10: '2.5'
+Traceback (most recent call last):
+  File "utils.py", line 7, in parse_retry_after
+    return int(header_value)
+ValueError: invalid literal for int() with base 10: '2.5'

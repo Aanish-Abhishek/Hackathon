@@ -1,0 +1,15 @@
+2026-10-08 15:01:03 ERROR order-api orders.py:4 ValueError: order quantity must be positive
+Traceback (most recent call last):
+  File "orders.py", line 4, in create_order
+    order = create_order("ACME", "BUY", -25, 101.50)
+ValueError: downstream risk service received invalid quantity -25
+2026-10-08 15:02:41 ERROR risk-engine risk.py:6 ZeroDivisionError: division by zero
+Traceback (most recent call last):
+  File "risk.py", line 6, in leverage
+    return exposure / equity
+ZeroDivisionError: division by zero
+2026-10-08 15:04:15 ERROR execution-worker execution.py:5 AssertionError: filled quantity exceeds order quantity
+Traceback (most recent call last):
+  File "execution.py", line 5, in apply_fill
+    order["filled_quantity"] += fill_quantity
+AssertionError: order ORD-9812 quantity 100, cumulative fills 140

@@ -1,0 +1,15 @@
+2026-10-08 15:10:22 ERROR portfolio-service portfolio.py:5 ReconciliationError: short position reported as long exposure
+Traceback (most recent call last):
+  File "portfolio.py", line 5, in market_value
+    return abs(position["quantity"]) * position["mark_price"]
+ReconciliationError: account ACC-014 expected -25000.00 exposure, reported 25000.00
+2026-10-08 15:12:09 ERROR settlement-worker settlement.py:7 SettlementDateError: Saturday settlement date generated
+Traceback (most recent call last):
+  File "settlement.py", line 7, in settlement_date
+    return trade_date + timedelta(days=business_days)
+SettlementDateError: trade dated Friday 2026-10-02 settled on Sunday 2026-10-04
+2026-10-08 15:13:56 ERROR market-data market_data.py:5 StaleQuoteError: quote age exceeded limit
+Traceback (most recent call last):
+  File "market_data.py", line 5, in get_quote
+    return quote
+StaleQuoteError: ACME quote cached for 00:47:12, maximum allowed age is 00:00:05
